@@ -1,9 +1,6 @@
 # Use the official Node.js image as the base image
 FROM node:19-alpine
 
-# 修改源, 以设置为aliyun为例
-echo -e 'https://mirrors.aliyun.com/alpine/v3.7/main/\nhttps://mirrors.aliyun.com/alpine/v3.7/community/' > /etc/apk/repositories
-
 # dockerfile 中修改源,并安装git命令(还需要其他命令,自行添加)
 RUN echo -e 'https://mirrors.aliyun.com/alpine/v3.7/main/\nhttps://mirrors.aliyun.com/alpine/v3.7/community/' > /etc/apk/repositories && \
     apk update && \
