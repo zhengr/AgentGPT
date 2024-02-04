@@ -1,5 +1,6 @@
 # Use the official Node.js image as the base image
 FROM node:19-alpine
+RUN echo -e http://mirrors.ustc.edu.cn/alpine/v3.7/main/ > /etc/apk/repositories
 
 ARG NODE_ENV
 
