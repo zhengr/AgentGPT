@@ -1,11 +1,14 @@
 # Use the official Node.js image as the base image
 FROM node:19-alpine
 
-# dockerfile 中修改源,并安装git命令(还需要其他命令,自行添加)
-RUN echo -e 'https://mirrors.aliyun.com/alpine/v3.7/main/\nhttps://mirrors.aliyun.com/alpine/v3.7/community/' > /etc/apk/repositories && \
-    apk update && \
-    apk upgrade && \
-    apk add --no-cache git
+# Using aliyun ubuntu mirror
+RUN sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
+RUN apt update
+# Install all system pre-reqs
+
+# Using douban pipy mirror
+RUN pip3 install -i https://pypi.douban.com/simple/ -U pip 
+RUN pip3 config set global.index-url https://pypi.douban.com/simple/
 
 ARG NODE_ENV
 
