@@ -8,6 +8,10 @@ RUN apt-get update && apt-get install -y \
   build-essential \
   && rm -rf /var/lib/apt/lists/*
 
+# Using douban pipy mirror
+RUN pip install -i https://mirrors.cloud.tencent.com/pypi/simple/ -U pip 
+RUN pip config set global.index-url https://mirrors.cloud.tencent.com/pypi/simple
+
 RUN pip install poetry==1.4.2
 
 # Configuring poetry
