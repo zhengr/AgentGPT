@@ -1,14 +1,7 @@
 # Use the official Node.js image as the base image
 FROM node:19-alpine
 
-# Using aliyun ubuntu mirror
-RUN sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
-RUN apt update
-# Install all system pre-reqs
-
-# Using douban pipy mirror
-RUN pip3 install -i https://pypi.douban.com/simple/ -U pip 
-RUN pip3 config set global.index-url https://pypi.douban.com/simple/
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
 ARG NODE_ENV
 
