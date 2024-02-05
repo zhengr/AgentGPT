@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 RUN pip install -i https://mirrors.cloud.tencent.com/pypi/simple/ -U pip 
 RUN pip config set global.index-url https://mirrors.cloud.tencent.com/pypi/simple
 
-RUN pip install poetry==1.4.2
+RUN pip install poetry==1.7
 
 # Configuring poetry
 RUN poetry config virtualenvs.create false
