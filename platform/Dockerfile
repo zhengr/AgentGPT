@@ -23,7 +23,7 @@ RUN poetry config virtualenvs.create false
 COPY pyproject.toml /app/src/
 WORKDIR /app/src
 
-RUN poetry source add --priority=primary aliyun http://mirrors.aliyun.com/pypi/simple/
+RUN poetry source add --priority=default aliyun http://mirrors.aliyun.com/pypi/simple/
 
 # Installing requirements
 RUN poetry install --only main
