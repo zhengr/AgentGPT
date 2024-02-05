@@ -13,11 +13,6 @@ maintainers = [
 
 readme = "README.md"
 
-[[tool.poetry.source]]
-name = "aliyun"
-url = "http://mirrors.aliyun.com/pypi/simple"
-default = true
-
 [tool.poetry.dependencies]
 python = "^3.11"
 fastapi = "^0.98.0"
