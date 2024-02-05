@@ -13,19 +13,19 @@ maintainers = [
 
 readme = "README.md"
 
-[[tool.poetry.source]]
+[tool.poetry.source]
 name = "ali"
 url = "https://mirrors.aliyun.com/pypi/simple/"
 priority = "primary"
 
 
-[[tool.poetry.source]]
+[tool.poetry.source]
 name = "tencent"
 url = "https://mirrors.cloud.tencent.com/pypi/simple/"
 priority = "primary"
 
 
-[[tool.poetry.source]]
+[tool.poetry.source]
 name = "tsinghua"
 url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
 priority = "default"
