@@ -18,11 +18,12 @@ RUN pip install poetry==1.4.2
 
 # Configuring poetry
 RUN poetry config virtualenvs.create false
-RUN poetry source add --priority=primary aliyun http://mirrors.aliyun.com/pypi/simple/
 
 # Copying requirements of a project
 COPY pyproject.toml /app/src/
 WORKDIR /app/src
+
+RUN poetry source add --priority=primary aliyun http://mirrors.aliyun.com/pypi/simple/
 
 # Installing requirements
 RUN poetry install --only main
